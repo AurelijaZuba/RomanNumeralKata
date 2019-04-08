@@ -19,23 +19,22 @@ public class RomanConverter {
             return romanList.get(number);
         }
 
-        var result = "";
-
+        var result = new StringBuilder();
         while(number >= 10) {
-            result += "X";
+            result.append("X");
             number -= 10;
         }
 
         while(number >= 5) {
-            result += "V";
+            result.append("V");
             number -= 5;
         }
 
         while(number >= 1) {
-            result += "I";
+            result.append("I");
             number -= 1;
         }
 
-        return result;
+        return result.toString();
     }
 }
