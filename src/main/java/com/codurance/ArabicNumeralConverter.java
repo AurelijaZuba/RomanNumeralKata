@@ -15,8 +15,7 @@ public class ArabicNumeralConverter {
             return arabicList.get(romanNumeral);
         }
 
-        int endIndex = romanNumeral.length() - 1;
-        String substring = romanNumeral.substring(0, endIndex);
+        String substring = romanNumeral.substring(0, romanNumeral.length() - 1);
         return 1 + convert(substring);
     }
 }
