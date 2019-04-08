@@ -6,11 +6,11 @@ public class ArabicNumeralConverter {
     private LinkedHashMap<String, Integer> arabicList = new LinkedHashMap<>();
 
     public ArabicNumeralConverter() {
-        arabicList.put("I", 1);
-        arabicList.put("IV", 4);
-        arabicList.put("V", 5);
-        arabicList.put("IX", 9);
         arabicList.put("X", 10);
+        arabicList.put("IX", 9);
+        arabicList.put("V", 5);
+        arabicList.put("IV", 4);
+        arabicList.put("I", 1);
     }
 
     public int convert(String romanNumeral) {
@@ -19,14 +19,14 @@ public class ArabicNumeralConverter {
         }
         var result = 0;
 
-        if (romanNumeral.startsWith("X")) {
-            romanNumeral = romanNumeral.substring(1);
-            result += 10;
-        }
+        for (var item : arabicList.entrySet()){
+            var key = item.getKey();
+            var value = item.getValue();
 
-        if (romanNumeral.startsWith("V")) {
-            romanNumeral = romanNumeral.substring(1);
-            result += 5;
+            if(romanNumeral.startsWith(key)){
+                romanNumeral = romanNumeral.substring(1);
+                result += value;
+            }
         }
 
         while(!romanNumeral.isEmpty()){
