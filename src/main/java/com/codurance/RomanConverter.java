@@ -19,14 +19,23 @@ public class RomanConverter {
             return romanList.get(number);
         }
 
-        if(number > 10) {
-            return "X" + convert(number - 10);
+        var result = "";
+
+        while(number >= 10) {
+            result += "X";
+            number -= 10;
         }
 
-        if(number > 5) {
-            return "V" + convert(number - 5);
+        while(number >= 5) {
+            result += "V";
+            number -= 5;
         }
 
-        return "I" + convert(number - 1);
+        while(number >= 1) {
+            result += "I";
+            number -= 1;
+        }
+
+        return result;
     }
 }
