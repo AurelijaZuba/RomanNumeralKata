@@ -21,7 +21,7 @@ public class RomanConverter {
 
         var romanNumeralBuilder = new StringBuilder();
         for (Map.Entry item : romanList.entrySet()) {
-            while (arabicNumeral >= (int) item.getKey()) {
+            while (arabicNumeral >= (int)item.getKey()) {
                 var arabicNumeralItem = (int)item.getKey();
                 var romanNumeral = item.getValue();
                 romanNumeralBuilder.append(romanNumeral);
