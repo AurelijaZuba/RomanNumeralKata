@@ -1,17 +1,17 @@
 package com.codurance;
 
-
-import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class RomanConverter {
-    private final HashMap<Integer, String> romanList = new HashMap();
+    private final LinkedHashMap<Integer, String> romanList = new LinkedHashMap<>();
 
     public RomanConverter() {
-        romanList.put(1, "I");
-        romanList.put(4, "IV");
-        romanList.put(5, "V");
-        romanList.put(9, "IX");
         romanList.put(10, "X");
+        romanList.put(9, "IX");
+        romanList.put(5, "V");
+        romanList.put(4, "IV");
+        romanList.put(1, "I");
     }
 
     public String convert(int number) {
@@ -20,19 +20,13 @@ public class RomanConverter {
         }
 
         var result = new StringBuilder();
-        while(number >= 10) {
-            result.append("X");
-            number -= 10;
-        }
-
-        while(number >= 5) {
-            result.append("V");
-            number -= 5;
-        }
-
-        while(number >= 1) {
-            result.append("I");
-            number -= 1;
+        for (Map.Entry item : romanList.entrySet()) {
+            while (number >= (int) item.getKey()) {
+                var key = (int)item.getKey();
+                var value = item.getValue();
+                result.append(value);
+                number -= key;
+            }
         }
 
         return result.toString();
