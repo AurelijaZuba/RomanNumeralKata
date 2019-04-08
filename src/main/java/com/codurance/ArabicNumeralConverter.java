@@ -7,13 +7,16 @@ public class ArabicNumeralConverter {
 
     public ArabicNumeralConverter() {
         arabicList.put("I", 1);
-        arabicList.put("II", 2);
-        arabicList.put("III", 3);
         arabicList.put("IV", 4);
     }
 
     public int convert(String romanNumeral) {
-        return arabicList.get(romanNumeral);
+        if(arabicList.containsKey(romanNumeral)){
+            return arabicList.get(romanNumeral);
+        }
 
+        int endIndex = romanNumeral.length() - 1;
+        String substring = romanNumeral.substring(0, endIndex);
+        return 1 + convert(substring);
     }
 }
