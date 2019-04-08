@@ -14,6 +14,9 @@ public class ArabicNumeralConverter {
     }
 
     public int convert(String romanNumeral) {
+//        if (arabicList.containsKey(romanNumeral)) {
+//            return arabicList.get(romanNumeral);
+//        } //Uncomment for efficiency
         var result = 0;
 
         while (!romanNumeral.isEmpty()) {
