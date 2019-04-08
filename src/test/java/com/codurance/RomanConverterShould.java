@@ -32,6 +32,8 @@ public class RomanConverterShould {
 
     static Stream<Arguments> romanNumerals() {
         return Stream.of(
-                arguments("1", "I"));
+                arguments("1", "I"),
+                arguments("2", "II")
+        );
     }
 }
