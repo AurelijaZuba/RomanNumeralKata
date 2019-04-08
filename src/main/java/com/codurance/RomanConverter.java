@@ -1,5 +1,6 @@
 package com.codurance;
 
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -20,12 +21,14 @@ public class RomanConverter {
         }
 
         var result = new StringBuilder();
-        for (Map.Entry item : romanList.entrySet()) {
-            while (number >= (int) item.getKey()) {
-                var key = (int)item.getKey();
+
+        Iterator iterator = romanList.entrySet().iterator();
+        while (iterator.hasNext()) {
+            var item = (Map.Entry) iterator.next();
+            while (number >= (int)item.getKey()) {
                 var value = item.getValue();
                 result.append(value);
-                number -= key;
+                number -= (int)item.getKey();
             }
         }
 
