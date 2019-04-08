@@ -34,7 +34,8 @@ public class ArabicNumeralConverterShould {
                 Arguments.arguments("X", "10"),
                 Arguments.arguments("XI", "11"),
                 Arguments.arguments("XII", "12"),
-                Arguments.arguments("XIII", "13")
+                Arguments.arguments("XIII", "13"),
+                Arguments.arguments("XX", "20")
 
         );
     }

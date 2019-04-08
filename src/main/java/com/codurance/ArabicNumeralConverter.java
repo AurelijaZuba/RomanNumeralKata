@@ -6,6 +6,7 @@ public class ArabicNumeralConverter {
     private LinkedHashMap<String, Integer> arabicList = new LinkedHashMap<>();
 
     public ArabicNumeralConverter() {
+        arabicList.put("XX", 20);
         arabicList.put("X", 10);
         arabicList.put("IX", 9);
         arabicList.put("V", 5);
