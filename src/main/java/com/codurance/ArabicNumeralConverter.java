@@ -18,6 +18,11 @@ public class ArabicNumeralConverter {
             return arabicList.get(romanNumeral);
         }
 
+        if (romanNumeral.startsWith("X")) {
+            String substring = romanNumeral.substring(1);
+            return 10 + convert(substring);
+        }
+
         if (romanNumeral.startsWith("V")) {
             String substring = romanNumeral.substring(1);
             return 5 + convert(substring);
