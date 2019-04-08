@@ -19,17 +19,14 @@ public class ArabicNumeralConverter {
         }
         var result = 0;
 
-        for (var item : arabicList.entrySet()){
-            var key = item.getKey();
-            var value = item.getValue();
-
-            if(romanNumeral.startsWith(key)){
+        for (var item : arabicList.entrySet()) {
+            if (romanNumeral.startsWith(item.getKey())) {
                 romanNumeral = romanNumeral.substring(1);
-                result += value;
+                result += item.getValue();
             }
         }
 
-        while(!romanNumeral.isEmpty()){
+        while (!romanNumeral.isEmpty()) {
             romanNumeral = romanNumeral.substring(1);
             result += 1;
         }
