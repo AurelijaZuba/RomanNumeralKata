@@ -8,6 +8,10 @@ public class ArabicNumeralConverter {
     public ArabicNumeralConverter() {
         arabicList.put("I", 1);
         arabicList.put("IV", 4);
+        arabicList.put("V", 5);
+        arabicList.put("VI", 6);
+        arabicList.put("VII", 7);
+        arabicList.put("VIII", 8);
     }
 
     public int convert(String romanNumeral) {
