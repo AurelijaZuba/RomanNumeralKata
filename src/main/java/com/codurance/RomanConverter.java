@@ -10,6 +10,9 @@ public class RomanConverter {
         romanList.put(1, "I");
         romanList.put(4, "IV");
         romanList.put(5, "V");
+        romanList.put(9, "IX");
+        romanList.put(10, "X");
+        romanList.put(20, "XX");
     }
 
     public String convert(int number) {

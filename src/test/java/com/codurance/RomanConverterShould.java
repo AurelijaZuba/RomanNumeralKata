@@ -39,7 +39,10 @@ public class RomanConverterShould {
                 arguments("5", "V"),
                 arguments("6", "VI"),
                 arguments("7", "VII"),
-                arguments("8", "VIII")
+                arguments("8", "VIII"),
+                arguments("9", "IX"),
+                arguments("10", "X"),
+                arguments("20", "XX")
         );
     }
 }
