@@ -14,15 +14,12 @@ public class ArabicNumeralConverter {
     }
 
     public int convert(String romanNumeral) {
-        if (arabicList.containsKey(romanNumeral)) {
-            return arabicList.get(romanNumeral);
-        }
         var result = 0;
 
         while (!romanNumeral.isEmpty()) {
             for (var item : arabicList.entrySet()) {
                 if (romanNumeral.startsWith(item.getKey())) {
-                    romanNumeral = romanNumeral.substring(1);
+                    romanNumeral = romanNumeral.substring(item.getKey().length());
                     result += item.getValue();
                 }
             }
