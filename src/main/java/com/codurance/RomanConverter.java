@@ -12,12 +12,15 @@ public class RomanConverter {
         romanList.put(5, "V");
         romanList.put(9, "IX");
         romanList.put(10, "X");
-        romanList.put(20, "XX");
     }
 
     public String convert(int number) {
         if(romanList.containsKey(number)){
             return romanList.get(number);
+        }
+
+        if(number > 10) {
+            return "X" + convert(number - 10);
         }
 
         if(number > 5) {
