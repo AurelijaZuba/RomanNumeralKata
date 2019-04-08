@@ -29,7 +29,9 @@ public class ArabicNumeralConverterShould {
                 Arguments.arguments("V", "5"),
                 Arguments.arguments("VI", "6"),
                 Arguments.arguments("VII", "7"),
-                Arguments.arguments("VIII", "8")
+                Arguments.arguments("VIII", "8"),
+                Arguments.arguments("IX", "9"),
+                Arguments.arguments("X", "10")
 
         );
     }
