@@ -14,21 +14,21 @@ public class RomanConverter {
         romanList.put(1, "I");
     }
 
-    public String convert(int number) {
-        if(romanList.containsKey(number)){
-            return romanList.get(number);
+    public String convert(int arabicNumeral) {
+        if(romanList.containsKey(arabicNumeral)){
+            return romanList.get(arabicNumeral);
         }
 
-        var result = new StringBuilder();
+        var romanNumeralBuilder = new StringBuilder();
         for (Map.Entry item : romanList.entrySet()) {
-            while (number >= (int) item.getKey()) {
-                var key = (int)item.getKey();
-                var value = item.getValue();
-                result.append(value);
-                number -= key;
+            while (arabicNumeral >= (int) item.getKey()) {
+                var arabicNumeralItem = (int)item.getKey();
+                var romanNumeral = item.getValue();
+                romanNumeralBuilder.append(romanNumeral);
+                arabicNumeral -= arabicNumeralItem;
             }
         }
 
-        return result.toString();
+        return romanNumeralBuilder.toString();
     }
 }
