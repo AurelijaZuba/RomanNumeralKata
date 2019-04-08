@@ -2,10 +2,10 @@ package com.codurance;
 
 
 public class RomanConverter {
-    private final String[] numberlist = {"I", "II", "III"};
+    private final String[] numberList = {"I", "II", "III", "IV"};
 
     public String convert(int number) {
 
-        return numberlist[number -1];
+        return numberList[number -1];
     }
 }
