@@ -1,16 +1,11 @@
 package com.codurance;
 
+
 public class RomanConverter {
+    private final String[] numberlist = {"I", "II", "III"};
+
     public String convert(int number) {
 
-        String result = "I";
-        if (number > 1) {
-            result += "I";
-        }
-        if (number > 2) {
-            result += "I";
-        }
-
-        return result;
+        return numberlist[number -1];
     }
 }
