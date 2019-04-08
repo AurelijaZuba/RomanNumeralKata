@@ -23,7 +23,9 @@ public class ArabicNumeralConverterShould {
     static Stream<Arguments> arabicNumerals() {
         return Stream.of(
                 Arguments.arguments("I", "1"),
-                Arguments.arguments("II", "2")
+                Arguments.arguments("II", "2"),
+                Arguments.arguments("III", "3"),
+                Arguments.arguments("IV", "4")
 
         );
     }
