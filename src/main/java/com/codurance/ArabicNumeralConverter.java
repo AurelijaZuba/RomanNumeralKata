@@ -17,18 +17,23 @@ public class ArabicNumeralConverter {
         if (arabicList.containsKey(romanNumeral)) {
             return arabicList.get(romanNumeral);
         }
+        var result = 0;
 
         if (romanNumeral.startsWith("X")) {
-            String substring = romanNumeral.substring(1);
-            return 10 + convert(substring);
+            romanNumeral = romanNumeral.substring(1);
+            result += 10;
         }
 
         if (romanNumeral.startsWith("V")) {
-            String substring = romanNumeral.substring(1);
-            return 5 + convert(substring);
+            romanNumeral = romanNumeral.substring(1);
+            result += 5;
         }
 
-        String substring = romanNumeral.substring(0, romanNumeral.length() - 1);
-        return 1 + convert(substring);
+        while(!romanNumeral.isEmpty()){
+            romanNumeral = romanNumeral.substring(1);
+            result += 1;
+        }
+
+        return result;
     }
 }
